@@ -26,6 +26,7 @@ De website zou nu volledig bruikbaar zijn.
 - wat (waar) uitleg
 - (eventuele extra details)
 <br>
+
 - Update = Iets ge-update of veranderd
 - Create = folder / file aangemaakt
 - Add = Iets toegevoegd aan een folder of file
