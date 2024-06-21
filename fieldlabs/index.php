@@ -12,22 +12,24 @@
 <body>
 
     <?php
-
     include("./includes/header.php");
-
     ?>
 
-    <?php
+<div class="container">
 
+    <?php
     include("./includes/navbar.php");
-
     ?>
 
-    <!-- Main content -->
+    <div class="main-content">
+
+        <!-- Main content -->
+        <h1>Hello world</h1>
+
+    </div>
+</div>
 
     <?php
-
     include("./includes/footer.php");
-
     ?>
 </body>

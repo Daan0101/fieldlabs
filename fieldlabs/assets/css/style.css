@@ -43,6 +43,16 @@ header {
     padding: 1em;
 }
 
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1em;
+}
+
 .sidenav {
     display: flex;
     flex-direction: column;
