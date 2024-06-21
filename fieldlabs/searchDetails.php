@@ -23,7 +23,7 @@
 
     ?>
 
-    <!-- Main content -->
+    <!-- SearchDetails content -->
 
     <?php
 

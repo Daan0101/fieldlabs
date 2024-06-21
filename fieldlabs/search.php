@@ -23,7 +23,7 @@
 
     ?>
 
-    <!-- Main content -->
+    <!-- Searcg content -->
 
     <?php
 
