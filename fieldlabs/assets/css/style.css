@@ -30,8 +30,6 @@ header {
 }
 
 .sidenav ul a {
-    display: flex;
-    flex-direction: column;
     color: white;
     padding-bottom: 16px;
     padding-top: 16px;
@@ -40,6 +38,15 @@ header {
 
 .sidenav ul a:hover {
     text-decoration: underline;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-solid {
+    margin-right: 8px;
 }
 
 footer {
