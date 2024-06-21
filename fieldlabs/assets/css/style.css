@@ -2,6 +2,37 @@ body {
     font-family: Arial, sans-serif;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* haal de verticale scrollbar weg en behoud de scroll functie */
+html,
+body {
+    overflow-y: hidden;
+    height: 100%;
+}
+
+body {
+    overflow-y: scroll;
+    position: relative;
+}
+
+/* voor WebKit browsers zoals: Chrome, Safari, en Opera */
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* voor Firefox */
+body {
+    scrollbar-width: none;
+}
+
+/* voor Internet Explorer, Edge */
+body {
+    -ms-overflow-style: none;
 }
 
 header {
@@ -21,6 +52,7 @@ header {
     width: 200px; /* Adjust the width as needed */
     padding: 15px; /* Padding inside the sidebar */
     border-radius: 30px;
+    flex-grow: 1; /* Makes the sidebar grow to fill the available space */
 }
 
 .sidenav ul {
@@ -50,8 +82,6 @@ header {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
     background-color: #303c54;
     width: 100%;
     padding: 1.5em;
