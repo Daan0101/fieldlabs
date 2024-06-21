@@ -23,8 +23,8 @@
 
     <div class="main-content">
 
-        <!-- Main content -->
-        <h1>Main content</h1>
+        <!-- my account content -->
+        <h1>my account</h1>
 
     </div>
 </div>
