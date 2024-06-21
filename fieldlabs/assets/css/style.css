@@ -25,6 +25,8 @@ header {
 
 .sidenav ul {
     list-style-type: none;
+    padding: 0; /* Remove padding to avoid extra space */
+    margin: 0; /* Remove margin to avoid extra space */
 }
 
 .sidenav ul a {
@@ -54,12 +56,28 @@ footer {
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 0.5em;
-    }
-
     header h1 {
         font-size: 20px;
         margin: 5px;
+    }
+
+    .sidenav {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .sidenav ul {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    .sidenav ul a {
+        flex-direction: row;
+        padding: 10px;
     }
 }
