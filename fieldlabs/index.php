@@ -24,7 +24,7 @@
     <div class="main-content">
 
         <!-- Main content -->
-        <h1>Hello world</h1>
+        <h1>Main content</h1>
 
     </div>
 </div>
