@@ -15,7 +15,7 @@ header {
 .sidenav {
     display: flex;
     flex-direction: column;
-    background-color: darkblue;
+    background-color: #303c54;
     padding: 1em;
     margin: 10px;
     width: 200px; /* Adjust the width as needed */
@@ -32,6 +32,20 @@ header {
     flex-direction: column;
     color: white;
     padding: 16px;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #303c54;
+    width: 100%;
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    color: #fff;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 600px) {
