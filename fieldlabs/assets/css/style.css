@@ -119,6 +119,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .main-content {
+        margin-left: 10px;
+    }
+    
     header h1 {
         font-size: 20px;
         margin: 5px;
