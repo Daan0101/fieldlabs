@@ -12,7 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
 <!-- Css -->
-<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="../fieldlabs/assets/css/style.css" rel="stylesheet"/>
 
 <!-- Fontawesome -->
 <script src="https://kit.fontawesome.com/b801578fa3.js" crossorigin="anonymous"></script>
