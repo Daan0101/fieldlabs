@@ -105,6 +105,8 @@ footer {
         margin: 0;
         border-radius: 0;
         padding: 0;
+        flex: 0;
+        flex-grow: 0;
     }
 
     .sidenav ul {
@@ -116,5 +118,11 @@ footer {
     .sidenav ul a {
         flex-direction: row;
         padding: 10px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 }
