@@ -8,9 +8,8 @@ body {
     overflow-x: hidden;
 }
 
-/* haal de verticale scrollbar weg en behoud de scroll functie */
-html,
-body {
+/* Remove vertical scrollbar and retain scroll function */
+html, body {
     overflow-y: hidden;
     height: 100%;
 }
@@ -20,17 +19,17 @@ body {
     position: relative;
 }
 
-/* voor WebKit browsers zoals: Chrome, Safari, en Opera */
+/* For WebKit browsers: Chrome, Safari, and Opera */
 body::-webkit-scrollbar {
     width: 0px;
 }
 
-/* voor Firefox */
+/* For Firefox */
 body {
     scrollbar-width: none;
 }
 
-/* voor Internet Explorer, Edge */
+/* For Internet Explorer, Edge */
 body {
     -ms-overflow-style: none;
 }
@@ -48,27 +47,27 @@ header {
     flex: 1;
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 1em;
-}
-
 .sidenav {
     display: flex;
     flex-direction: column;
     background-color: #303c54;
     padding: 1em;
     margin: 10px;
-    width: 200px; /* Adjust the width as needed */
-    padding: 15px; /* Padding inside the sidebar */
+    width: 200px;
+    padding: 15px;
     border-radius: 30px;
-    flex-grow: 1; /* Makes the sidebar grow to fill the available space */
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1em;
 }
 
 .sidenav ul {
     list-style-type: none;
-    padding: 0; /* Remove padding to avoid extra space */
-    margin: 0; /* Remove margin to avoid extra space */
+    padding: 0;
+    margin: 0;
 }
 
 .sidenav ul a {
@@ -80,11 +79,6 @@ header {
 
 .sidenav ul a:hover {
     text-decoration: underline;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
 }
 
 .fa-solid {
@@ -108,6 +102,10 @@ footer {
         margin: 5px;
     }
 
+    .container {
+        flex-direction: column;
+    }
+
     .sidenav {
         flex-direction: row;
         justify-content: space-evenly;
@@ -115,8 +113,6 @@ footer {
         margin: 0;
         border-radius: 0;
         padding: 0;
-        flex: 0;
-        flex-grow: 0;
     }
 
     .sidenav ul {
@@ -128,11 +124,5 @@ footer {
     .sidenav ul a {
         flex-direction: row;
         padding: 10px;
-    }
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
     }
 }
