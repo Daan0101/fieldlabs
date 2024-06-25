@@ -45,7 +45,7 @@ header {
     justify-content: center;
     background-color: var(--main-bg-header);
     color: white;
-    padding: 1em;
+    padding: 1%;
 }
 
 .main-content {
