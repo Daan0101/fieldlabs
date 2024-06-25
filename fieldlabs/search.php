@@ -15,12 +15,11 @@
     include("./includes/header.php");
     ?>
 
-<div class="container">
-
-    <?php
+<?php
     include("./includes/navbar.php");
     ?>
 
+<div class="container">
     <div class="main-content">
 
         <!-- Search content -->
