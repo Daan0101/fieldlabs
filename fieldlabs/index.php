@@ -4,7 +4,7 @@
 <head>
     <?php
 
-    include("./includes/head.php");
+    include ("./includes/head.php");
 
     ?>
 </head>
@@ -12,24 +12,24 @@
 <body>
 
     <?php
-    include("./includes/header.php");
+    include ("./includes/header.php");
     ?>
-
-<div class="container">
 
     <?php
-    include("./includes/navbar.php");
+    include ("./includes/navbar.php");
     ?>
 
-    <div class="main-content">
+    <div class="container">
 
-        <!-- Main content -->
-        <h1>Main content</h1>
+        <div class="main-content">
 
+            <!-- Main content -->
+            <h1>Main content</h1>
+
+        </div>
     </div>
-</div>
 
     <?php
-    include("./includes/footer.php");
+    include ("./includes/footer.php");
     ?>
 </body>
