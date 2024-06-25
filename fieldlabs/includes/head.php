@@ -25,6 +25,6 @@
 session_start();
 
 include("./functions/functions.php");
-//$conn = dbConnect();
+$conn = dbConnect();
 
 ?>
