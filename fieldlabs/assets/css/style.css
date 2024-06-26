@@ -65,7 +65,50 @@ header {
     flex: 1;
 }
 
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.LoginButton {
+    display: inline-block;
+    padding: 25px;
+    font-size: xx-large;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #fff;
+}
+
+.LoginButton:hover {
+    background-color: var(--main-bg-footer);
+    cursor: pointer;
+}
+
+.LoginButton:active {
+    background-color: var(--main-bg-header);
+    box-shadow: 0 5px #fff;
+    transform: translateY(4px);
+}
+
+#btnPost, #btnSearch {
+    width: 250%;
+}
+
+#btnPost, #btnSearch, #btnMyGroups {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
 .sidenav {
+    font-size: large;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -133,7 +176,39 @@ footer {
     flex-wrap: wrap;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1050px) {
+    #btnPost, #btnSearch {
+        width: 200%;
+    }
+
+    #btnMyGroups {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #btnPost, #btnSearch {
+        width: 100%;
+    }
+
+    #btnMyGroups {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #btnPost, #btnSearch {
+        width: 70%;
+    }
+
+    #btnMyGroups {
+        width: 65%;
+    }
+
+    .icon {
+        font-size: 0;
+    }
+
     div.row {
         padding-right: 0;
         margin-left: 16%;
