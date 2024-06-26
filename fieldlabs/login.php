@@ -13,15 +13,17 @@
         <div class="main-content">
             <div class="row">
                 <h1>Login!</h1>
-                <form action="" method="post">
-                    <div class="row">
-                        <label for="email">Email</label>
-                    </div>
-                    <input type="email" class="form-control" id="email" name="email">
-                    <div class="row">
-                        <button type="submit" name="getQR" class="btn btn-primary">Get QR</button>
-                    </div>
-                </form>
+                <div id="form-container">
+                    <form method="post">
+                        <div class="row">
+                            <label for="email">Email</label>
+                        </div>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="row">
+                            <button type="submit" name="getQR" class="btn btn-primary">Get QR</button>
+                        </div>
+                    </form>
+                </div>
                 <?php
 
                 if (isset($_POST['getQR'])) {
@@ -31,6 +33,9 @@
                     $stmt = $conn->prepare("SELECT token FROM users WHERE email = :email");
                     $stmt->bindParam(':email', $email);
                     $stmt->execute();
+
+                    // Set email in an session
+                    $_SESSION['email'] = $email;
 
                     // check if email is in database
                     if ($stmt->rowCount() == 0) {
@@ -52,23 +57,32 @@
 
                 ?>
 
-                <form method="post" action="">
-                    <div class="row">
-                        <div class="col-lg-4"></div>
-                        <div class="form-group col-lg-4" style="text-align:center">
-                            <input type="text" class="form-control" name="pin" minlength="4" maxlength="6" required />
-                            <br><br>
-                            <button name="submit-pin" type="submit" class="btn btn-primary">Enter</button>
+                    <form method="post" action="">
+                        <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class="form-group col-lg-4" style="text-align:center">
+                                <input type="text" class="form-control" name="pin" minlength="4" maxlength="6" required />
+                                <br><br>
+                                <button name="submit-pin" type="submit" class="btn btn-primary">Enter</button>
+                            </div>
+                            <div class="col-lg-4"></div>
                         </div>
-                        <div class="col-lg-4"></div>
-                    </div>
-                </form>
+                    </form>
 
                 <?php
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-pin'])) {
                     $pin = $_POST['pin'];
-                    $token = $_SESSION['token'];
+                    $email = $_SESSION['email'];
+
+                    $stmt = $conn->prepare("SELECT token FROM users WHERE email = :email");
+                    $stmt->bindParam(':email', $email);
+                    $stmt->execute();
+                    $token = $stmt->fetchColumn();
+
+                    //echo $token;
+                    
+                    $_SESSION['token'] = $token;
 
                     if (validate_pin($pin, $token) == 'True') {
                         echo "<script type=\"text/javascript\">toastr.success('Login successful')</script>";
@@ -83,7 +97,7 @@
                         header("Location: index.php");
                     } else {
                         // PIN is invalid
-                        echo '<h1>Invalid</h1>';
+                        echo "<script type=\"text/javascript\">toastr.error('Invalid PIN')</script>";
                     }
                 }
 
