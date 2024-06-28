@@ -15,7 +15,7 @@
     include("./includes/header.php");
     ?>
 
-<?php
+    <?php
     include("./includes/navbar.php");
     ?>
 
