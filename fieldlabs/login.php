@@ -20,7 +20,7 @@
                         </div>
                         <input type="email" class="form-control" id="email" name="email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                         <div class="row">
-                            <button class="styleButton" id="btnLogin" type="submit" name="getQR" class="btn btn-primary">Get QR</button>
+                            <button class="styleButton" id="btnLogin" type="submit" name="getQR" class="btn btn-primary">Generate pin</button>
                         </div>
                     </form>
                 </div>
