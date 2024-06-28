@@ -74,7 +74,6 @@ header {
 
 .styleButton {
     display: inline-block;
-    padding: 15px;  
     font-size: xx-large;
     cursor: pointer;
     text-align: center;
@@ -119,6 +118,14 @@ input:focus {
 #btnPost, #btnSearch, #btnMyGroups {
     margin-bottom: 5%;
     margin-top: 5%;
+    padding: 15px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
 }
 
 .sidenav {
@@ -179,6 +186,11 @@ form {
     flex-direction: column;
 }
 
+#btnLogin {
+    padding: 5%;
+    width: 200%;
+}
+
 .sidenav ul a {
     color: white;
     padding-bottom: 16px;
@@ -205,9 +217,9 @@ footer {
     flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1100px) {
     #btnPost, #btnSearch {
-        width: 175%;
+        width: 155%;
     }
 
     #btnMyGroups {
@@ -232,6 +244,11 @@ footer {
 
     #btnMyGroups {
         width: 65%;
+    }
+
+    #btnLogin {
+        padding: 5%;
+        width: 150%;
     }
 
     .icon {
