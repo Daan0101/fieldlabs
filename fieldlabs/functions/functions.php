@@ -153,7 +153,7 @@ function register($conn) {
 
             $cURLConnection = curl_init();
 
-            $url = 'https://www.authenticatorapi.com/pair.aspx?AppName=Fieldlabs&AppInfo=Fieldlabs&SecretCode=' . $token;
+            $url = 'https://www.authenticatorapi.com/pair.aspx?AppName=Fieldlabs&AppInfo=' . $username . '&SecretCode=' . $token;
             curl_setopt($cURLConnection, CURLOPT_URL, $url);
 
             curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
