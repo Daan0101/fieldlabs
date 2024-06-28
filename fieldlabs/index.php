@@ -25,14 +25,14 @@
         <div class="main-content">
 
             <div class="column">
-                <a href="../fieldlabs/myGroups.php" class="LoginButton" id="btnMyGroups"><i
+                <a href="../fieldlabs/myGroups.php" class="styleButton" id="btnMyGroups"><i
                         class="fa-solid fa-arrow-right icon"></i>Mijn groepen <i
                         class="fa-solid fa-arrow-left icon"></i></a>
                 <div class="column">
-                    <a href="../fieldlabs/post.php" class="LoginButton" id="btnPost"><i
+                    <a href="../fieldlabs/post.php" class="styleButton" id="btnPost"><i
                             class="fa-solid fa-arrow-right icon"></i>Plaats opdracht <i
                             class="fa-solid fa-arrow-left icon"></i></a>
-                    <a href="../fieldlabs/search.php" class="LoginButton" id="btnSearch"><i
+                    <a href="../fieldlabs/search.php" class="styleButton" id="btnSearch"><i
                             class="fa-solid fa-arrow-right icon"></i>Zoek opdracht <i
                             class="fa-solid fa-arrow-left icon"></i></a>
                 </div>

@@ -20,7 +20,7 @@
                         </div>
                         <input type="email" class="form-control" id="email" name="email" required>
                         <div class="row">
-                            <button type="submit" name="getQR" class="btn btn-primary">Get QR</button>
+                            <button class="styleButton" type="submit" name="getQR" class="btn btn-primary">Get QR</button>
                         </div>
                     </form>
                 </div>
@@ -36,7 +36,7 @@
                             <div class="form-group col-lg-4" style="text-align:center">
                                 <input type="text" class="form-control" name="pin" minlength="4" maxlength="6" required />
                                 <br><br>
-                                <button name="submit-pin" type="submit" class="btn btn-primary">Enter</button>
+                                <button class="styleButton" name="submit-pin" type="submit" class="btn btn-primary">Enter</button>
                             </div>
                             <div class="col-lg-4"></div>
                         </div>
