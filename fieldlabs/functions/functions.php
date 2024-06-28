@@ -1,5 +1,7 @@
 <?php
 
+/***************************************************************************/
+
 function dbConnect()
 {
     try {
@@ -15,6 +17,8 @@ function dbConnect()
         echo $e->getMessage();
     }
 }
+
+/***************************************************************************/
 
 function getQrToken($conn) {
     if (isset($_POST['getQR'])) {
@@ -47,6 +51,8 @@ function getQrToken($conn) {
     }
 }
 
+/***************************************************************************/
+
 function makeApiRequest($apiUrl) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
@@ -62,6 +68,8 @@ function validate_pin($pin, $token) {
     return trim(strip_tags($response));
 
 }
+
+/***************************************************************************/
 
 function login($conn) {
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-pin'])) {
@@ -95,4 +103,26 @@ function login($conn) {
     }
 }
 
+/***************************************************************************/
+
+function genToken() {
+    $token = bin2hex(random_bytes(32));
+
+    return $token;
+}
+
+/***************************************************************************/
+
+function register($conn) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
+        $email = $_POST['email'];
+        $role = $_POST['role'];
+        $token = genToken();
+
+        
+
+        // DEBUG
+        //echo $token;
+    }
+}
 ?>

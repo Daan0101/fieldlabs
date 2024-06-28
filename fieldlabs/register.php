@@ -30,6 +30,12 @@
     </div>
 
     <?php
+
+    register($conn) 
+    
+    ?>
+
+    <?php
     include ("./includes/footer.php");
     ?>
 </body>
