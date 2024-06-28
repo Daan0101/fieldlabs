@@ -27,4 +27,10 @@ session_start();
 include("./functions/functions.php");
 $conn = dbConnect();
 
+if (!isset($_SESSION['uid'])) {
+    // echo "<script>location.href='../fieldlabs/login.php'</script>";
+
+    header("Location: login.php");
+}
+
 ?>
