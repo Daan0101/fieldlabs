@@ -178,7 +178,7 @@ footer {
 
 @media screen and (max-width: 1050px) {
     #btnPost, #btnSearch {
-        width: 200%;
+        width: 175%;
     }
 
     #btnMyGroups {
