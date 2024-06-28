@@ -124,15 +124,34 @@ function genToken() {
 /***************************************************************************/
 
 function register($conn) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
-        $email = $_POST['email'];
-        $role = $_POST['role'];
-        $token = genToken();
+    try {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $role = $_POST['role'];
+            $token = genToken();
 
-        
-
-        // DEBUG
-        //echo $token;
+            $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            
+            if ($stmt->rowCount() > 0) {
+                echo "<script type=\"text/javascript\">toastr.error('User already exists')</script>";
+                exit;
+            }
+    
+            $stmt = $conn->prepare("INSERT INTO users (username, email, role, token) VALUES (:username, :email, :role, :token)");
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':role', $role);
+            $stmt->bindParam(':token', $token);
+            $stmt->execute();
+            // DEBUG
+            //echo $token;
+        }
+    }
+    catch(PDOException $e) {
+        echo "<script type=\"text/javascript\">toastr.error('Something went wrong')</script>";
     }
 }
 
