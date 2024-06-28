@@ -98,6 +98,10 @@ header {
     transform: translateY(4px);
 }
 
+.title {
+    font-size: 250%;
+}
+
 #btnPost, #btnSearch {
     width: 250%;
 }
@@ -135,6 +139,9 @@ header {
 }
 
 .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     padding: 1em;
 }
@@ -146,6 +153,10 @@ header {
 }
 
 div.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding-bottom: 16px;
     padding-top: 16px;
 }
@@ -210,8 +221,12 @@ footer {
     }
 
     div.row {
-        padding-right: 0;
-        margin-left: 16%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 16px;
+        padding-top: 16px;
     }
 
     .main-content {
