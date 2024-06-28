@@ -18,7 +18,7 @@
                         <div class="row">
                             <label for="email">Email</label>
                         </div>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                         <div class="row">
                             <button class="styleButton" id="btnLogin" type="submit" name="getQR" class="btn btn-primary">Get QR</button>
                         </div>
