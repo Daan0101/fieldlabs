@@ -116,7 +116,7 @@ function login($conn) {
 /***************************************************************************/
 
 function genToken() {
-    $token = bin2hex(random_bytes(32));
+    $token = bin2hex(random_bytes(20));
 
     return $token;
 }
@@ -148,6 +148,26 @@ function register($conn) {
             $stmt->execute();
             // DEBUG
             //echo $token;
+
+            echo "<script type=\"text/javascript\">toastr.success('Registered successfully')</script>";
+
+            $cURLConnection = curl_init();
+
+            $url = 'https://www.authenticatorapi.com/pair.aspx?AppName=Fieldlabs&AppInfo=Fieldlabs&SecretCode=' . $token;
+            curl_setopt($cURLConnection, CURLOPT_URL, $url);
+
+            curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+
+            $apiResponse = curl_exec($cURLConnection);
+
+            if(curl_errno($cURLConnection)){
+                echo 'cURL error: ' . curl_error($cURLConnection);
+            } else {
+                
+                echo $apiResponse;
+            }
+
+            curl_close($cURLConnection);
         }
     }
     catch(PDOException $e) {
