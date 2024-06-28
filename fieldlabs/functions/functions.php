@@ -76,32 +76,42 @@ function login($conn) {
         $pin = $_POST['pin'];
         $email = $_SESSION['email'];
 
-        $stmt = $conn->prepare("SELECT token FROM users WHERE email = :email");
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $token = $stmt->fetchColumn();
-
-        //echo $token;
         
-        $_SESSION['token'] = $token;
+        $array = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (validate_pin($pin, $token) == 'True') {
-            echo "<script type=\"text/javascript\">toastr.success('Login successful')</script>";
-            
-            $stmt = $conn->prepare("SELECT uid FROM users WHERE email = :email");
-            $stmt->bindParam(':email', $email);
-            $stmt->execute();
-            $uid = $stmt->fetchColumn();
+        if ($array) {
 
-            $_SESSION['uid'] = $uid;
+            $_SESSION['username'] = $array['username'] ?? null;
+            $_SESSION['email'] = $email;
+            $_SESSION['role'] = $array['role'] ?? null;
+            $_SESSION['token'] = $array['token'] ?? null;
 
-            header("Location: index.php");
+            $token = $_SESSION['token'];
+
+            if (validate_pin($pin, $token) == 'True') {
+                echo "<script type=\"text/javascript\">toastr.success('Login successful')</script>";
+                
+                // Fetch the UID
+                $stmt = $conn->prepare("SELECT uid FROM users WHERE email = :email");
+                $stmt->bindParam(':email', $email);
+                $stmt->execute();
+                $uid = $stmt->fetchColumn();
+
+                $_SESSION['uid'] = $uid;
+
+                header("Location: index.php");
+            } else {
+                echo "<script type=\"text/javascript\">toastr.error('Invalid PIN')</script>";
+            }
         } else {
-            // PIN is invalid
-            echo "<script type=\"text/javascript\">toastr.error('Invalid PIN')</script>";
+            echo "<script type=\"text/javascript\">toastr.error('User not found')</script>";
         }
     }
 }
+
 
 /***************************************************************************/
 
@@ -125,4 +135,28 @@ function register($conn) {
         //echo $token;
     }
 }
+
+/***************************************************************************/
+
+function showButtons ($conn){
+    if (isset($_SESSION['role']) && $_SESSION['role'] == 'Docent') {
+        echo '<div class="column">
+                    <a href="../fieldlabs/post.php" class="styleButton" id="btnPost"><i
+                            class="fa-solid fa-arrow-right icon"></i>Plaats opdracht <i
+                            class="fa-solid fa-arrow-left icon"></i></a>';
+    } else if (isset($_SESSION['role']) && $_SESSION['role'] == 'Student') {
+        echo '<div class="column">
+        <a href="../fieldlabs/myGroups.php" class="styleButton" id="btnMyGroups"><i
+                        class="fa-solid fa-arrow-right icon"></i>Mijn groepen <i
+                        class="fa-solid fa-arrow-left icon"></i></a>
+
+            <a href="../fieldlabs/search.php" class="styleButton" id="btnSearch"><i
+                            class="fa-solid fa-arrow-right icon"></i>Zoek opdracht <i
+                            class="fa-solid fa-arrow-left icon"></i></a>
+            
+        </div>';
+    }
+}
+
+
 ?>
