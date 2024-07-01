@@ -101,6 +101,10 @@ header {
     font-size: 250%;
 }
 
+.username {
+    color: white;
+}
+
 input {
     border-radius: 8px;
     padding-top: 2%;
