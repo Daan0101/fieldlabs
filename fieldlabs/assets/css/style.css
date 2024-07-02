@@ -112,7 +112,9 @@ div.form-container {
     align-items: center;
     flex-direction: column;
     background-color: gray;
-    padding: 15%;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 10px;
     border-radius: 12px;
 }
 
