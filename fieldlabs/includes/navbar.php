@@ -5,7 +5,7 @@
         if (isset($_SESSION['uid'])) {
             $query = "SELECT * FROM users WHERE uid = :uid";
             $stmt = $conn->prepare($query);
-            $stmt->bindParam('uid', $_SESSION['uid']);
+            $stmt->bindParam(':uid', $_SESSION['uid']);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $data = $stmt->fetch();
