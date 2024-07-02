@@ -1,3 +1,3 @@
 <footer>
-    <div>&copy; 2024 Footer</div>
+    <div>&copy; 2024</div>
 </footer>
