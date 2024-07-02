@@ -13,3 +13,14 @@ CREATE TABLE IF NOT EXISTS users (
 
 REPLACE INTO users (uid, username, email, role, token)
 VALUES (1, 'admin', 'admin@admin', 'Docent', 'mamjebentjarig');
+
+
+CREATE TABLE `posts` (
+  `location` varchar(255) NOT NULL,
+  `title` text NOT NULL,
+  `product_owner_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `details` text NOT NULL,
+  PRIMARY KEY (`post_id`)
+)
