@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include("./includes/head.php");
+    include ("./includes/head.php");
     try {
         if (isset($_POST['submit'])) {
             $title = $_POST['title'];
@@ -34,30 +34,33 @@
 <body>
 
     <?php
-    include("./includes/header.php");
+    include ("./includes/header.php");
     ?>
 
     <?php
-    include("./includes/navbar.php");
+    include ("./includes/navbar.php");
     ?>
 
     <div class="container">
         <div class="main-content">
 
-            <!-- Post content -->
-            <h1>Details</h1>
-            <form method="post">
-                <input type="text" name="title" placeholder="Titel">
-                <input type="text" name="location" placeholder="Locatie">
-                <textarea name="details" placeholder="Opdracht details"></textarea>
-                <input type="date" name="date" placeholder="Waar">
-                <input type="submit" name="submit" value="Plaats odpracht">
-            </form>
-
+            <div class="darkBG">
+                <div class="form-container">
+                    <!-- Post content -->
+                    <h1>Plaats een opdracht</h1>
+                    <form method="post">
+                        <input type="text" name="title" placeholder="Titel..">
+                        <input type="text" name="location" placeholder="Locatie..">
+                        <textarea rows="4" cols="30" name="details" placeholder="Opdracht details.."></textarea>
+                        <input type="date" name="date">
+                        <input class="styleButton" type="submit" name="submit" value="Plaats opdracht..">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
     <?php
-    include("./includes/footer.php");
+    include ("./includes/footer.php");
     ?>
 </body>

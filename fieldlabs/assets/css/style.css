@@ -74,6 +74,38 @@ div#form-container {
     padding: 1%
 }
 
+div.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1%
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    margin: 5%;
+    border-style: none;
+    font-size: large;
+}
+
+.form-container input:focus, .form-container textarea:focus {
+    outline: none;
+    border-style: solid;
+}
+
+.form-container input {
+    padding: 5%;
+}
+
+.darkBG {
+    background-color: gray;
+    padding-left: 33%;
+    padding-right: 33%;
+    border-radius: 12px;
+}
+
 .column {
     display: flex;
     justify-content: center;
@@ -104,6 +136,11 @@ div#form-container {
     background-color: var(--main-bg-header);
     box-shadow: 0 5px #fff;
     transform: translateY(4px);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .title {
@@ -202,6 +239,11 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+textarea {
+    resize: none;
+    font-family: inherit;
 }
 
 #btnLogin {
