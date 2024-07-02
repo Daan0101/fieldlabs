@@ -3,8 +3,30 @@
 
 <head>
     <?php
-
     include("./includes/head.php");
+    try {
+        if (isset($_POST['submit'])) {
+            $title = $_POST['title'];
+            $location = $_POST['location'];
+            $details = $_POST['details'];
+            $date = $_POST['date'];
+
+            $query = "INSERT INTO posts (title, location, product_owner_id, date, details) VALUES  (:title, :location, :product_owner_id, :date, :details)";
+
+            $stmt = dbConnect()->prepare($query);
+
+            $stmt->execute([
+                ':title' => $title,
+                ':location' => $location,
+                ':details' => $details,
+                ':date' => $date,
+                ':product_owner_id' => $_SESSION['uid'],
+            ]);
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
 
     ?>
 </head>
@@ -15,18 +37,25 @@
     include("./includes/header.php");
     ?>
 
-<?php
+    <?php
     include("./includes/navbar.php");
     ?>
 
-<div class="container">
-    <div class="main-content">
+    <div class="container">
+        <div class="main-content">
 
-        <!-- Post content -->
-        <h1>Post</h1>
+            <!-- Post content -->
+            <h1>Details</h1>
+            <form method="post">
+                <input type="text" name="title" placeholder="Titel">
+                <input type="text" name="location" placeholder="Locatie">
+                <textarea name="details" placeholder="Opdracht details"></textarea>
+                <input type="date" name="date" placeholder="Waar">
+                <input type="submit" name="submit" value="Plaats odpracht">
+            </form>
 
+        </div>
     </div>
-</div>
 
     <?php
     include("./includes/footer.php");
