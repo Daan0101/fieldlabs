@@ -65,6 +65,15 @@ header {
     flex: 1;
 }
 
+div#form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1%
+}
+
 .column {
     display: flex;
     justify-content: center;
