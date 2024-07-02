@@ -51,7 +51,7 @@
 
             ?>
                     <div>
-                        <h1>aa<?php echo $title; ?></h1>
+                        <h1><?php echo $title; ?></h1>
                         <article><?php echo $details; ?></article>
                         <h5><?php echo $username; ?></h5>
                         
