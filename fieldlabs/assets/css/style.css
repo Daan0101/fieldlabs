@@ -99,10 +99,20 @@ div.form-container {
     padding: 5%;
 }
 
-.darkBG {
+.darkBGpost {
     background-color: gray;
     padding-left: 33%;
     padding-right: 33%;
+    border-radius: 12px;
+}
+
+.darkBGsearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: gray;
+    padding: 25%;
     border-radius: 12px;
 }
 

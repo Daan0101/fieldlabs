@@ -44,7 +44,7 @@
     <div class="container">
         <div class="main-content">
 
-            <div class="darkBG">
+            <div class="darkBGpost">
                 <div class="form-container">
                     <!-- Post content -->
                     <h1>Plaats een opdracht</h1>
