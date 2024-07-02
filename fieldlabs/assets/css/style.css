@@ -99,6 +99,13 @@ div.form-container {
     padding: 5%;
 }
 
+.darkBG {
+    background-color: gray;
+    padding-left: 33%;
+    padding-right: 33%;
+    border-radius: 12px;
+}
+
 .column {
     display: flex;
     justify-content: center;
