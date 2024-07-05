@@ -3,6 +3,16 @@
 
 <head>
     <?php
+    session_start(); // Start the session
+    include ("./includes/head.php");
+
+    // Check if the user's role is 'Docent'
+    if ($_SESSION['role'] !== 'Docent') {
+        // If not, redirect them to an access denied page or the homepage
+        header("Location: ./");
+        exit(); // Prevent further execution of the script
+    }
+
     include ("./includes/head.php");
     try {
         if (isset($_POST['submit'])) {
