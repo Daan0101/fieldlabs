@@ -58,7 +58,7 @@
                 <p><?php echo $location; ?></p>
                 <p><?php echo $date; ?></p>
                 <h3><?php echo $username; ?></h3>
-                <a class="styleButton" id="terugBtn" href="search.php">Terug</a>
+                <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
                 </div>
             </div>
             
