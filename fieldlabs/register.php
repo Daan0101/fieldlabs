@@ -40,6 +40,7 @@
                         </div>
                         <select id="role" name="role" class="form-control" required>
                             <option value="Student">Student</option>
+                            <option value="Docent">Docent</option>
                         </select>
                         <div class="row">
                             <button class="styleButton" id="btnLogin" type="submit" name="register" class="btn btn-primary">Register</button>

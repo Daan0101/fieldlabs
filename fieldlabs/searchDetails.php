@@ -79,7 +79,7 @@
             $query = "SELECT username FROM users WHERE uid = :uid";
             $stmt = dbConnect()->prepare($query);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $stmt->execute(['uid' => $_SESSION['uid']]);
+            $stmt->execute(['uid' => $record['product_owner_id']]);
             $record = $stmt->fetch();
             $username = $record['username'];
             // -----------------------------------
