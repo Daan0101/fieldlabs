@@ -192,9 +192,11 @@ function showButtons($conn)
                             <div class="column">
                 <a href="../fieldlabs/myGroups.php" class="styleButton" id="btnMyGroups"><i
                     class="fa-solid fa-arrow-right icon"></i>Mijn groepen <i
-                    class="fa-solid fa-arrow-left icon"></i></a>;';
+                    class="fa-solid fa-arrow-left icon"></i></a></div>'
+                    ;
     } else if (isset($_SESSION['role']) && $_SESSION['role'] == 'Student') {
         echo '
+        <div class="column">
             <a href="../fieldlabs/search.php" class="styleButton" id="btnSearch"><i
                 class="fa-solid fa-arrow-right icon"></i>Zoek opdracht <i
                 class="fa-solid fa-arrow-left icon"></i></a>
