@@ -124,6 +124,14 @@ div.form-container {
     border-radius: 12px;
 }
 
+.submitError {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23b6ff;
+    color: white;
+}
+
 .column {
     display: flex;
     justify-content: center;
@@ -133,7 +141,7 @@ div.form-container {
 
 .styleButton {
     display: inline-block;
-    font-size: xx-large;
+    font-size: x-large;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -143,6 +151,14 @@ div.form-container {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #fff;
+    width: 100%;
+    overflow: hidden;
+    white-space:normal !important;
+    word-wrap:break-word;
+}
+
+.formStyle {
+    padding-bottom: 5%;
 }
 
 #terugBtn {
@@ -186,6 +202,10 @@ input {
     border-radius: 8px;
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+.meerRuimte {
+    padding: 15px;
 }
 
 input:focus {
@@ -377,6 +397,18 @@ footer {
     #btnLogin {
         padding: 5%;
         width: 150%;
+    }
+
+    h3 {
+        margin: 5px;
+    }
+
+    .formStyle {
+        margin-top: 5%;
+    }
+
+    p {
+        margin: 5px;
     }
 
     .icon {
