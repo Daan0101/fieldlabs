@@ -21,7 +21,7 @@
 
     <div class="container">
         <div class="main-content">
-            <div>
+            <div class="form-container">
                 <!-- Search content -->
                 <!-- <h1>Search</h1> -->
 
@@ -50,13 +50,11 @@
                         // -----------------------------------
                 
                         ?>
-                        <div class="form-container">
                         <div class="darkBGsearch">  
                             <h1><?php echo $title; ?></h1>
                             <article><?php echo $details; ?></article>
                             <h5><?php echo "opdrachtgever: " . $username; ?></h5>
                         <a class="meerDetails" href="<?php echo $url ?>">Meer details</a>
-                        </div>
                         </div>
                         <?php
                     }
@@ -65,7 +63,7 @@
                 }
 
                 ?>
-
+                </div>
             </div>
         </div>
     </div>

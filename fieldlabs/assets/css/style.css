@@ -76,7 +76,8 @@ div#form-container {
 
 div.form-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -112,9 +113,14 @@ div.form-container {
     align-items: center;
     flex-direction: column;
     background-color: gray;
-    width: 80%;
+    max-width: 40%;
+    max-height: 40%;
+    min-width: 40%;
+    min-height: 40%;
+    margin: 2%;
+    padding: 2%;
+    border-radius: 12px;
     box-sizing: border-box;
-    padding: 10px;
     border-radius: 12px;
 }
 
@@ -146,11 +152,10 @@ div.form-container {
 
 .meerDetails {
     color: white;
-    text-decoration: none;
 }
 
 .meerDetails:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .styleButton:hover {
