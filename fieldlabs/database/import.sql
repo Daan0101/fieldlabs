@@ -23,7 +23,7 @@ CREATE TABLE `posts` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `details` text NOT NULL,
   PRIMARY KEY (`post_id`)
-)
+);
 
 CREATE TABLE `requests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -31,4 +31,4 @@ CREATE TABLE `requests` (
   `product_owner_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) 
+);
