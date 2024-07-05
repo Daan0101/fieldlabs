@@ -20,7 +20,8 @@ function dbConnect()
 
 /***************************************************************************/
 
-function getQrToken($conn) {
+function getQrToken($conn)
+{
     if (isset($_POST['getQR'])) {
 
         $email = $_POST['email'];
@@ -53,7 +54,8 @@ function getQrToken($conn) {
 
 /***************************************************************************/
 
-function makeApiRequest($apiUrl) {
+function makeApiRequest($apiUrl)
+{
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -62,7 +64,8 @@ function makeApiRequest($apiUrl) {
     return $response;
 }
 
-function validate_pin($pin, $token) {
+function validate_pin($pin, $token)
+{
     $apiUrl = 'https://www.authenticatorapi.com/Validate.aspx?Pin=' . $pin . '&SecretCode=' . $token;
     $response = makeApiRequest($apiUrl);
     return trim(strip_tags($response));
@@ -71,7 +74,8 @@ function validate_pin($pin, $token) {
 
 /***************************************************************************/
 
-function login($conn) {
+function login($conn)
+{
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-pin'])) {
         $pin = $_POST['pin'];
         $email = $_SESSION['email'];
@@ -79,7 +83,7 @@ function login($conn) {
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        
+
         $array = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($array) {
@@ -93,7 +97,7 @@ function login($conn) {
 
             if (validate_pin($pin, $token) == 'True') {
                 echo "<script type=\"text/javascript\">toastr.success('Login successful')</script>";
-                
+
                 // Fetch the UID
                 $stmt = $conn->prepare("SELECT uid FROM users WHERE email = :email");
                 $stmt->bindParam(':email', $email);
@@ -115,7 +119,8 @@ function login($conn) {
 
 /***************************************************************************/
 
-function genToken() {
+function genToken()
+{
     $token = bin2hex(random_bytes(20));
 
     return $token;
@@ -123,7 +128,8 @@ function genToken() {
 
 /***************************************************************************/
 
-function register($conn) {
+function register($conn)
+{
     try {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
             $username = $_POST['username'];
@@ -134,12 +140,12 @@ function register($conn) {
             $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
-            
+
             if ($stmt->rowCount() > 0) {
                 echo "<script type=\"text/javascript\">toastr.error('User already exists')</script>";
                 exit;
             }
-    
+
             $stmt = $conn->prepare("INSERT INTO users (username, email, role, token) VALUES (:username, :email, :role, :token)");
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
@@ -160,38 +166,38 @@ function register($conn) {
 
             $apiResponse = curl_exec($cURLConnection);
 
-            if(curl_errno($cURLConnection)){
+            if (curl_errno($cURLConnection)) {
                 echo 'cURL error: ' . curl_error($cURLConnection);
             } else {
-                
+
                 echo $apiResponse;
             }
 
             curl_close($cURLConnection);
         }
-    }
-    catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo "<script type=\"text/javascript\">toastr.error('Something went wrong')</script>";
     }
 }
 
 /***************************************************************************/
 
-function showButtons ($conn){
+function showButtons($conn)
+{
     if (isset($_SESSION['role']) && $_SESSION['role'] == 'Docent') {
         echo '<div class="column">
                     <a href="../fieldlabs/post.php" class="styleButton" id="btnPost"><i
                             class="fa-solid fa-arrow-right icon"></i>Plaats opdracht <i
-                            class="fa-solid fa-arrow-left icon"></i></a>';
+                            class="fa-solid fa-arrow-left icon"></i></a> 
+                            <div class="column">
+                <a href="../fieldlabs/myGroups.php" class="styleButton" id="btnMyGroups"><i
+                    class="fa-solid fa-arrow-right icon"></i>Mijn groepen <i
+                    class="fa-solid fa-arrow-left icon"></i></a>;';
     } else if (isset($_SESSION['role']) && $_SESSION['role'] == 'Student') {
-        echo '<div class="column">
-        <a href="../fieldlabs/myGroups.php" class="styleButton" id="btnMyGroups"><i
-                        class="fa-solid fa-arrow-right icon"></i>Mijn groepen <i
-                        class="fa-solid fa-arrow-left icon"></i></a>
-
+        echo '
             <a href="../fieldlabs/search.php" class="styleButton" id="btnSearch"><i
-                            class="fa-solid fa-arrow-right icon"></i>Zoek opdracht <i
-                            class="fa-solid fa-arrow-left icon"></i></a>
+                class="fa-solid fa-arrow-right icon"></i>Zoek opdracht <i
+                class="fa-solid fa-arrow-left icon"></i></a>
             
         </div>';
     }
