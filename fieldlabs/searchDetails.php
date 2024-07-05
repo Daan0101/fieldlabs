@@ -24,7 +24,7 @@
         <div class="main-content">
 
             <!-- Search Details content -->
-            <h1>Search Details</h1>
+            <!-- <h1>Search Details</h1> -->
 
             <?php
             $post_id = $_GET['post_id'];
@@ -51,12 +51,15 @@
             // -----------------------------------
 
             ?>
-            <div>
+                <div class="form-container">
+                <div class="darkBGsearch">
                 <h1><?php echo $title; ?></h1>
                 <article><?php echo $details; ?></article>
                 <p><?php echo $location; ?></p>
                 <p><?php echo $date; ?></p>
-                <h5><?php echo $username; ?></h5>
+                <h3><?php echo $username; ?></h3>
+                <a class="styleButton" id="terugBtn" href="search.php">Terug</a>
+                </div>
             </div>
             
 

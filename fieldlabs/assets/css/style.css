@@ -139,6 +139,19 @@ div.form-container {
     box-shadow: 0 9px #fff;
 }
 
+#terugBtn {
+    padding: 1%;
+}
+
+.meerDetails {
+    color: white;
+    text-decoration: none;
+}
+
+.meerDetails:hover {
+    text-decoration: underline;
+}
+
 .styleButton:hover {
     background-color: var(--main-bg-footer);
     cursor: pointer;
