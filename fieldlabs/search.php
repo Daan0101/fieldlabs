@@ -51,11 +51,11 @@
                 
                         ?>
                         <div class="form-container">
-                        <div class="darkBGsearch">
+                        <div class="darkBGsearch">  
                             <h1><?php echo $title; ?></h1>
                             <article><?php echo $details; ?></article>
                             <h5><?php echo "opdrachtgever: " . $username; ?></h5>
-                        <a href="<?php echo $url ?>">Meer details</a>
+                        <a class="meerDetails" href="<?php echo $url ?>">Meer details</a>
                         </div>
                         </div>
                         <?php
