@@ -24,3 +24,11 @@ CREATE TABLE `posts` (
   `details` text NOT NULL,
   PRIMARY KEY (`post_id`)
 )
+
+CREATE TABLE `requests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_id` int(11) NOT NULL,
+  `product_owner_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
