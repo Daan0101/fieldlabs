@@ -5,6 +5,40 @@
     <?php
 
     include("./includes/head.php");
+    if (isset($_POST['request'])) {
+        echo "submit";
+        try {
+            $post_id = $_GET['post_id'];
+            $student_id = $_SESSION['uid'];
+            $query = 
+            "SELECT post_id, student_id FROM requests WHERE post_id = :post_id AND student_id = :student_id";
+            $stmt = dbConnect()->prepare($query);
+             $stmt->execute([':post_id' => $post_id, ':student_id' => $student_id]);
+            // $stmt->fetch();
+            if (!$stmt->fetch()) {
+                $query = "SELECT * FROM posts WHERE post_id = :post_id";
+                $stmt = dbConnect()->prepare($query);
+                $stmt->execute([':post_id' => $post_id]);
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                $record = $stmt->fetch();
+                $product_owner_id = $record["product_owner_id"];
+                $query =
+                    "INSERT INTO 
+                requests (student_id, post_id, product_owner_id) 
+                VALUES (:student_id, :post_id, :product_owner_id) ";
+                $stmt = dbConnect()->prepare($query);
+                $stmt->execute([
+                    ':student_id' => $student_id,
+                    ':post_id' => $post_id,
+                    ':product_owner_id' => $product_owner_id
+                ]);
+            } else {
+                echo "Je hebt dit al aangevraagd";
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
     ?>
 </head>
@@ -51,17 +85,19 @@
             // -----------------------------------
 
             ?>
-                <div class="form-container">
+            <div class="form-container">
                 <div class="darkBGsearch">
-                <h1><?php echo $title; ?></h1>
-                <article><?php echo $details; ?></article>
-                <p><?php echo $location; ?></p>
-                <p><?php echo $date; ?></p>
-                <h3><?php echo $username; ?></h3>
-                <a class="styleButton" id="terugBtn" href="search.php">Terug</a>
+                    <h1><?php echo $title; ?></h1>
+                    <article><?php echo $details; ?></article>
+                    <p><?php echo $location; ?></p>
+                    <p><?php echo $date; ?></p>
+                    <h3><?php echo $username; ?></h3>
+                    <form method="post"><input type="submit" class="styleButton" name="request" value="Opdracht aanvragen">
+                    </form>
+                    <a class="styleButton" id="terugBtn" href="search.php">Terug</a>
                 </div>
             </div>
-            
+
 
         </div>
     </div>
