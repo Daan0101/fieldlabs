@@ -98,8 +98,6 @@
                     <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
                 </div>
             </div>
-
-
         </div>
     </div>
 
