@@ -101,12 +101,9 @@
                         $query = "INSERT INTO student_posts (post_id, student_id) VALUES(:post_id, :student_id)";
                         $stmt = dbConnect()->prepare($query);
                         $stmt->execute([':post_id' => $request['post_id'], 'student_id' => $request['student_id']]);
-                        echo "adad,lmpauyg";
                     }
                     if (isset($_POST["decline" . $request['id']])) {
-                        echo $request['id'];
                         deleteRecord($request['id']);
-                        echo "adad,lmpauyg";
                     }
                 }
                 //  ---------------------------------------------
