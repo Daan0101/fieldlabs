@@ -40,3 +40,10 @@ CREATE TABLE `request_complete` (
   `product_owner_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `student_posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+);
