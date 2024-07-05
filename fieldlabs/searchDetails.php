@@ -93,7 +93,7 @@
                     <p><?php echo $date; ?></p>
                     <h3><?php echo $username; ?></h3>
                     <form method="post" class="formStyle">
-                        <input class="styleButton" type="submit" name="request" value="Opdracht aanvragen">
+                        <input class="secondbutton" type="submit" name="request" value="opdracht aanvragen">
                     </form>
                     <div class="meerRuimte">
                     <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
