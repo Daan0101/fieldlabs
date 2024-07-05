@@ -32,3 +32,11 @@ CREATE TABLE `requests` (
   `post_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `request_complete` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `product_owner_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+);
