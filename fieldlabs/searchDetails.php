@@ -6,7 +6,7 @@
 
     include("./includes/head.php");
     if (isset($_POST['request'])) {
-        echo "submit";
+        echo "";
         try {
             $post_id = $_GET['post_id'];
             $student_id = $_SESSION['uid'];
@@ -33,7 +33,7 @@
                     ':product_owner_id' => $product_owner_id
                 ]);
             } else {
-                echo "Je hebt dit al aangevraagd";
+                echo "<div class='submitError'>ERROR: Je hebt deze opdracht al aangevraagd.</div>";
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -91,11 +91,13 @@
                     <article><?php echo $details; ?></article>
                     <p><?php echo $location; ?></p>
                     <p><?php echo $date; ?></p>
-                    <h3><?php echo $username; ?></h3>`
-                    <form method="post">
-                        <input type="submit" name="request" value="Opdracht aanvragen">
+                    <h3><?php echo $username; ?></h3>
+                    <form method="post" class="formStyle">
+                        <input class="secondbutton" type="submit" name="request" value="opdracht aanvragen">
                     </form>
+                    <div class="meerRuimte">
                     <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
+                    </div>
                 </div>
             </div>
         </div>
