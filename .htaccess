@@ -1,0 +1,10 @@
+# Deze code zorgt ervoor dat in de url niet meer de soort file staat (van het type .php)
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/(.+)\.php\sHTTP [NC]
+RewriteRule ^ /%1 [R=301,L]
