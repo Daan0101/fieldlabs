@@ -132,7 +132,7 @@
             ?>
                     <div>
                         <h4><?php echo $postTitle ?></h4>
-                        <p><?php echo "$username heeft deze opdracht aangevraagd. Goedkeuren?"  ?></p>
+                        <p><?php echo "$username wilt deze opdracht afronden. Goedkeuren?"  ?></p>
                         <form method="post">
                             <input type="submit" name="<?php echo "accept_complete" . $request['id'] ?>" value="Goedkeuren">
                             <input type="submit" name="<?php echo "decline_complete" . $request['id'] ?>" value="Afkeuren">
