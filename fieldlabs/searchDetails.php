@@ -91,7 +91,8 @@
                 <article><?php echo $details; ?></article>
                 <p><?php echo $location; ?></p>
                 <p><?php echo $date; ?></p>
-                <h3><?php echo $username; ?></h3>
+                <h3><?php echo $username; ?></h3>`
+                <input type="submit" name="request" value="Opdracht aanvragen">
                 <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
                 </div>
             </div>
