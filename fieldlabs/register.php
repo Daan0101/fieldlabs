@@ -39,7 +39,6 @@
                             <label for="role">Role</label>
                         </div>
                         <select id="role" name="role" class="form-control" required>
-                            <option value="Docent">Docent</option>
                             <option value="Student">Student</option>
                         </select>
                         <div class="row">
