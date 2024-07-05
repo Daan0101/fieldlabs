@@ -196,8 +196,7 @@ function showButtons($conn)
                     <i class="fa-solid fa-arrow-left icon"></i>
                     </a> 
                     <div class="column">
-                </div>'
-        ;
+                </div>';
     } else if (isset($_SESSION['role']) && $_SESSION['role'] == 'Student') {
         echo '
         <div class="column">
