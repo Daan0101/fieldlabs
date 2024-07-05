@@ -28,13 +28,6 @@
     }
 
 
-    // Check the user’s role
-    if ($data['role'] === 'student') {
-    // Redirect to home if user is a student
-    header("Location: ../fieldlabs/index.php");
-    exit();
-}
-
     ?>
 </head>
 
