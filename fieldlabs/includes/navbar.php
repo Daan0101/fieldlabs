@@ -15,13 +15,13 @@
             echo '
             <li><div class="navRow"><a href="../fieldlabs/index.php"><i class="fa-solid fa-house"></i>Home</a></div></li>
             <li><div class="navRow"><a href="../fieldlabs/search.php"><i class="fa-solid fa-magnifying-glass"></i>Search</a></div></li>
+            <li><div class="navRow"><a href="../fieldlabs/myGroups.php"><i class="fa-solid fa-users"></i>My Groups</a></div></li>
             ';
 
             // Display links based on user role
             if ($role === 'Docent') {
                 echo '
                 <li><div class="navRow"><a href="../fieldlabs/post.php"><i class="fa-solid fa-pen-to-square"></i>Post</a></div></li>
-                <li><div class="navRow"><a href="../fieldlabs/myGroups.php"><i class="fa-solid fa-users"></i>My Groups</a></div></li>
                 ';
             }
             // Display common links for both roles
