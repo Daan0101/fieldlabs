@@ -22,8 +22,6 @@
     <div class="container">
         <div class="main-content">
 
-            <!-- my groups content -->
-            <h1>my groups</h1>
 
             <?php
             $query = "SELECT role FROM users WHERE uid = :uid";
@@ -46,19 +44,27 @@
                     $stmt->execute([':student_id' => $request['student_id']]);
                     $username = $stmt->fetch()['username'];
                     
-
+                    if(isset($_POST["accept".$request['id']])){
+                        echo $request['id'];
+                        echo "adad,lmpauyg";
+                    }
+                    if(isset($_POST["decline".$request['id']])){
+                        echo $request['id'];
+                        echo "adad,lmpauyg";
+                    }
 
             ?>
                     <div>
                         <h4><?php echo $postTitle ?></h4>
                         <p><?php echo "$username heeft deze opdracht aangevraagd. Goedkeuren?"  ?></p>
                         <div>
-                            <input type="<?php echo ""?>" name="accept." value="Goedkeuren">
-                            <input type="submit" name="decline" value="Afkeuren">
+                            <input type="submit" name="<?php echo "accept".$request['id'] ?>" value="Goedkeuren">
+                            <input type="submit" name="<?php echo "decline".$request['id'] ?>" value="Afkeuren">
                         </div>
                     </div>
             <?php
-                    
+
+                    // if()
                 }
             }
 
