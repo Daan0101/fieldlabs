@@ -10,10 +10,10 @@
         try {
             $post_id = $_GET['post_id'];
             $student_id = $_SESSION['uid'];
-            $query = 
-            "SELECT post_id, student_id FROM requests WHERE post_id = :post_id AND student_id = :student_id";
+            $query =
+                "SELECT post_id, student_id FROM requests WHERE post_id = :post_id AND student_id = :student_id";
             $stmt = dbConnect()->prepare($query);
-             $stmt->execute([':post_id' => $post_id, ':student_id' => $student_id]);
+            $stmt->execute([':post_id' => $post_id, ':student_id' => $student_id]);
             // $stmt->fetch();
             if (!$stmt->fetch()) {
                 $query = "SELECT * FROM posts WHERE post_id = :post_id";
@@ -87,13 +87,15 @@
             ?>
             <div class="form-container">
                 <div class="darkBGsearch">
-                <h1><?php echo $title; ?></h1>
-                <article><?php echo $details; ?></article>
-                <p><?php echo $location; ?></p>
-                <p><?php echo $date; ?></p>
-                <h3><?php echo $username; ?></h3>`
-                <input type="submit" name="request" value="Opdracht aanvragen">
-                <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
+                    <h1><?php echo $title; ?></h1>
+                    <article><?php echo $details; ?></article>
+                    <p><?php echo $location; ?></p>
+                    <p><?php echo $date; ?></p>
+                    <h3><?php echo $username; ?></h3>`
+                    <form method="post">
+                        <input type="submit" name="request" value="Opdracht aanvragen">
+                    </form>
+                    <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
                 </div>
             </div>
 
