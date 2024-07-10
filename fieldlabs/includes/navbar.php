@@ -26,6 +26,7 @@
             } elseif ($role === 'admin') {
                 echo '
                 <li><div class="navRow"><a href="../fieldlabs/admin.php"><i class="fa-solid fa-pen-to-square"></i>Admin</a></div></li>
+                <li><div class="navRow"><a href="../fieldlabs/ilostmyqr.php"><i class="fa-solid fa-qrcode"></i></i>I lost my QR</a></div></li>                
                 ';
             }
             // Navigatie voor beide rollen
@@ -38,7 +39,6 @@
             echo '
             <li><div class="navRow"><a href="../fieldlabs/register.php"><i class="fa-solid fa-user-plus"></i>Register</a></div></li>
             <li><div class="navRow"><a href="../fieldlabs/login.php"><i class="fa-solid fa-right-to-bracket"></i>Login</a></div></li>
-            <li><div class="navRow"><a href="../fieldlabs/ilostmyqr.php"><i class="fa-solid fa-qrcode"></i></i>I lost my QR</a></div></li>
             ';
         }
 
