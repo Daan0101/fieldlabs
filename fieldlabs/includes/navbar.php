@@ -13,7 +13,7 @@
             $role = $data['role']; 
             // Navigatie voor beide rollen
             echo '
-            <li><div class="navRow"><a href="../fieldlabs/index.php"><i class="fa-solid fa-house"></i>Home</a></div></li>
+            <li><div class="navRow"><p class="username">Ingelogd als: ' . $role . '</p><a href="../fieldlabs/index.php"><i class="fa-solid fa-house"></i>Home</a></div></li>
             <li><div class="navRow"><a href="../fieldlabs/search.php"><i class="fa-solid fa-magnifying-glass"></i>Search</a></div></li>
             <li><div class="navRow"><a href="../fieldlabs/myGroups.php"><i class="fa-solid fa-users"></i>My Groups</a></div></li>
             ';
