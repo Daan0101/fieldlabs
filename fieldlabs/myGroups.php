@@ -59,7 +59,7 @@
 
     <div class="container">
         <div class="main-content">
-
+        <div class="darkBGmygroups">
 
             <?php
             $query = "SELECT role FROM users WHERE uid = :uid";
@@ -87,11 +87,12 @@
 
             ?>
                     <div>
+                    
                     <div class="form-container2">
                         <h4><?php echo $postTitle ?></h4>
-                        <p><?php echo "$username heeft deze opdracht aangevraagd. Goedkeuren?"  ?></p>
-                        <form method="post">
-                            <input class="styleButton" type="submit" name="<?php echo "accept" . $request['id'] ?>" value="Goedkeuren">
+                        <p class="details"><?php echo "$username heeft deze opdracht aangevraagd. Goedkeuren?"  ?></p>
+                        <form method="post" class="formChoice">
+                            <input class="styleButton" type="submit" name="<?php echo "accept" . $request['id'] ?>" value="Goedkeuren"><br>
                             <input class="styleButton" type="submit" name="<?php echo "decline" . $request['id'] ?>" value="Afkeuren">
                         </form>
                         </div>
@@ -132,7 +133,7 @@
                     <div>
                         <h4><?php echo $postTitle ?></h4>
                         <p><?php echo "$username wilt deze opdracht afronden. Goedkeuren?"  ?></p>
-                        <form method="post">
+                        <form method="post" class="formChoice">
                             <input class="styleButton" type="submit" name="<?php echo "accept_complete" . $request['id'] ?>" value="Goedkeuren">
                             <input class="styleButton" type="submit" name="<?php echo "decline_complete" . $request['id'] ?>" value="Afkeuren">
                         </form>
@@ -198,7 +199,7 @@
                 }
             }
 ?>
-
+</div>
     </div>
     </div>
 

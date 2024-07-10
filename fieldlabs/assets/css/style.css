@@ -93,7 +93,6 @@ div.form-container {
 
 .form-container input:focus, .form-container textarea:focus {
     outline: none;
-    border-style: solid;
 }
 
 .form-container input {
@@ -119,7 +118,6 @@ div.form-container2 {
 
 .form-container2 input:focus, .form-container2 textarea:focus {
     outline: none;
-    border-style: solid;
 }
 
 .form-container2 input {
@@ -148,6 +146,25 @@ div.form-container2 {
     border-radius: 12px;
     box-sizing: border-box;
     border-radius: 12px;
+}
+
+.darkBGmygroups {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    padding-left: 33%;
+    padding-right: 33%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-width: 30%;
 }
 
 .submitError {
@@ -202,6 +219,9 @@ div.form-container2 {
     word-wrap: break-word; /* Allow long words to break */
 }
 
+.formChoice {
+    padding: 1%;
+}
 
 .formStyle {
     padding-bottom: 5%;
@@ -214,6 +234,18 @@ div.form-container2 {
 
 .meerDetails {
     color: white;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
 }
 
 .meerDetails:hover {
