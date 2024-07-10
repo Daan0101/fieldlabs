@@ -181,16 +181,16 @@
 
                     ?>
                     <div class="form-container">
-                        <div class="darkBGsearch">
+                        
                             <h1><?php echo $title; ?></h1>
-                            <article><?php echo $details; ?></article>
+                            <p class="details"><?php echo $details; ?></p>
                             <p><?php echo $location; ?></p>
                             <p><?php echo $date; ?></p>
                             <h3>Neem contact op met <?php echo $username; ?>.</h3>
                             <form method="post">
                                 <input class="styleButton" type="submit" name="done" value="Opdracht afronden">
                             </form>
-                        </div>
+                        
                     </div>
         </div>
 
