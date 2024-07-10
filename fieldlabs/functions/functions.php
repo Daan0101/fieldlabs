@@ -134,7 +134,7 @@ function register($conn)
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
             $username = $_POST['username'];
             $email = $_POST['email'];
-            $role = $_POST['role'];
+            $role = 'Student';
             $token = genToken();
 
             $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");

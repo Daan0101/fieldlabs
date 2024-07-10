@@ -34,14 +34,6 @@
                             <label for="username">username</label>
                         </div>
                         <input type="text" class="form-control" id="username" name="username" required>
-
-                        <div class="row">
-                            <label for="role">Role</label>
-                        </div>
-                        <select id="role" name="role" class="form-control" required>
-                            <option value="Student">Student</option>
-                            <option value="Docent">Docent</option>
-                        </select>
                         <div class="row">
                             <button class="styleButton" id="btnLogin" type="submit" name="register" class="btn btn-primary">Register</button>
                         </div>
