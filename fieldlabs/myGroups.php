@@ -87,12 +87,14 @@
 
             ?>
                     <div>
+                    <div class="form-container">
                         <h4><?php echo $postTitle ?></h4>
                         <p><?php echo "$username heeft deze opdracht aangevraagd. Goedkeuren?"  ?></p>
                         <form method="post">
                             <input type="submit" name="<?php echo "accept" . $request['id'] ?>" value="Goedkeuren">
                             <input type="submit" name="<?php echo "decline" . $request['id'] ?>" value="Afkeuren">
                         </form>
+                        </div>
                     </div>
                     <?php
                     if (isset($_POST["accept" . $request['id']])) {
