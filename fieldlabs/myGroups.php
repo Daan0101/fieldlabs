@@ -14,7 +14,7 @@
     <?php
     include("./includes/header.php");
     if (isset($_POST['done'])) {
-        echo "dadad";
+        echo "<div class='submitError'>SYSTEEM: Opdracht afronding verzonden</div>";
         // $query = "DELETE FROM student_posts WHERE student_id = :student_id";
         $query = "SELECT * FROM student_posts WHERE student_id = :student_id";
         $stmt = dbConnect()->prepare($query);
@@ -87,12 +87,12 @@
 
             ?>
                     <div>
-                    <div class="form-container">
+                    <div class="form-container2">
                         <h4><?php echo $postTitle ?></h4>
                         <p><?php echo "$username heeft deze opdracht aangevraagd. Goedkeuren?"  ?></p>
                         <form method="post">
-                            <input type="submit" name="<?php echo "accept" . $request['id'] ?>" value="Goedkeuren">
-                            <input type="submit" name="<?php echo "decline" . $request['id'] ?>" value="Afkeuren">
+                            <input class="styleButton" type="submit" name="<?php echo "accept" . $request['id'] ?>" value="Goedkeuren">
+                            <input class="styleButton" type="submit" name="<?php echo "decline" . $request['id'] ?>" value="Afkeuren">
                         </form>
                         </div>
                     </div>
@@ -133,8 +133,8 @@
                         <h4><?php echo $postTitle ?></h4>
                         <p><?php echo "$username wilt deze opdracht afronden. Goedkeuren?"  ?></p>
                         <form method="post">
-                            <input type="submit" name="<?php echo "accept_complete" . $request['id'] ?>" value="Goedkeuren">
-                            <input type="submit" name="<?php echo "decline_complete" . $request['id'] ?>" value="Afkeuren">
+                            <input class="styleButton" type="submit" name="<?php echo "accept_complete" . $request['id'] ?>" value="Goedkeuren">
+                            <input class="styleButton" type="submit" name="<?php echo "decline_complete" . $request['id'] ?>" value="Afkeuren">
                         </form>
                     </div>
                     <?php
@@ -187,14 +187,12 @@
                             <p><?php echo $date; ?></p>
                             <h3>Neem contact op met <?php echo $username; ?>.</h3>
                             <form method="post">
-                                <input type="submit" name="done" value="Opdracht afronden">
+                                <input class="styleButton" type="submit" name="done" value="Opdracht afronden">
                             </form>
                         </div>
                     </div>
         </div>
 
-
-        ?>
 <?php
 
                 }

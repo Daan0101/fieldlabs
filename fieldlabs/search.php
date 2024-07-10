@@ -52,7 +52,7 @@
                         ?>
                         <div class="darkBGsearch">  
                             <h1><?php echo $title; ?></h1>
-                            <article><?php echo $details; ?></article>
+                            <p class="details"><?php echo $details; ?></p>
                             <h5><?php echo "opdrachtgever: " . $username; ?></h5>
                         <a class="meerDetails" href="<?php echo $url ?>">Meer details</a>
                         </div>
