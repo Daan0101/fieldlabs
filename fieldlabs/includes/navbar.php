@@ -23,6 +23,10 @@
                 echo '
                 <li><div class="navRow"><a href="../fieldlabs/post.php"><i class="fa-solid fa-pen-to-square"></i>Post</a></div></li>
                 ';
+            } elseif ($role === 'admin') {
+                echo '
+                <li><div class="navRow"><a href="../fieldlabs/admin.php"><i class="fa-solid fa-pen-to-square"></i>Admin</a></div></li>
+                ';
             }
             // Navigatie voor beide rollen
             echo '

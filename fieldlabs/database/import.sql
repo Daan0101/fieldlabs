@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 REPLACE INTO users (uid, username, email, role, token)
 VALUES 
-(1, 'admin', 'admin@admin', 'Docent', 'mamjebentjarig'),
+(1, 'admin', 'admin@admin', 'admin', 'mamjebentjarig'),
 (2, 'Onno', 'Onno@onno', 'Docent', '8763gjdget37gh'),
 (3, 'Jeffry', 'Jeffry@jeffry', 'Docent', '98757892ghjgfghjh'),
 (4, 'Docent', 'Docent@docent', 'Docent', '8767972876');
