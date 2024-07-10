@@ -45,7 +45,7 @@
                     ':product_owner_id' => $post_id
                 ]);
             } else {
-                echo "<div class='submitError'>ERROR: Je hebt deze opdracht al aangevraagd.</div>";
+                echo "";
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
