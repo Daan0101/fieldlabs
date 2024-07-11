@@ -188,7 +188,7 @@
                         // -----------------------------------
 
                         ?>
-                        <div class="form-container">
+                        <div class="form-container3">
 
                             <h1><?php echo $title; ?></h1>
                             <p class="details"><?php echo $details; ?></p>
@@ -208,10 +208,11 @@
                 }
     ?>
         </div>
-        <div class="darkBGmygroups">
+        
             <?php
             if (getRole() == 'Docent') {
             ?>
+            <div class="darkBGmygroups">
                 <h2>Jouw groep(en)</h2>
                 <?php
                 $stmt =  dbConnect()->prepare(
@@ -254,6 +255,7 @@
                             <p><?php echo $date; ?></p>
                             <h3>Student: <?php echo $username; ?></h3>
                         </div>
+                    </div>
                     </div>
                      <?php
                     }
