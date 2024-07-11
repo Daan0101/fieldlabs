@@ -72,7 +72,7 @@ if (isset($_POST['done'])) {
                         ':product_owner_id' => $product_owner_id
                     ]);
 
-                    echo "<div class='submitSuccess'>Request successfully completed.</div>";
+                    echo "<div class='submitError'>Request successfully completed.</div>";
                 }
             }
         } 

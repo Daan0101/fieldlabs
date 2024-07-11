@@ -492,6 +492,15 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .username {
+        margin-top: 10px;
+    }
+
     div.form-container {
         display: flex;
         flex-direction: column;
