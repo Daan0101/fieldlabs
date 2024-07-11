@@ -157,7 +157,6 @@ if (isset($_POST['done'])) {
                     $requests = $stmt->fetchAll();
                     echo count($requests);
                     foreach ($requests as $request) {
-                        echo "wsp";
                         // Post title
                         $query = "SELECT title FROM posts WHERE post_id = :post_id";
                         $stmt = dbConnect()->prepare($query);
