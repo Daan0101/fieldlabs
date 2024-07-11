@@ -60,7 +60,7 @@
     <div class="container">
         <div class="main-content">
         <div class="darkBGmygroups">
-
+            <h3></h3>
             <?php
             $query = "SELECT role FROM users WHERE uid = :uid";
             $stmt = dbConnect()->prepare($query);
