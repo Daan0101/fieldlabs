@@ -21,7 +21,7 @@
             $details = $_POST['details'];
             $date = $_POST['date'];
 
-            $query = "UPDATE posts SET title =:title, location = :location, product_owner_id = :product_owner_id, date = :date, details = :details";
+            $query = "UPDATE posts SET title =:title, location = :location, product_owner_id = :product_owner_id, date = :date, details = :details WHERE post_id=:post_id";
 
             $stmt = dbConnect()->prepare($query);
 
@@ -30,7 +30,7 @@
                 ':location' => $location,
                 ':details' => $details,
                 ':date' => $date,
-                ':product_owner_id' => $_SESSION['uid'],
+                ':product_owner_id' => $_GET['id'],
             ]);
             header('Location: search.php');
         }
