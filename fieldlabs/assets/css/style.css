@@ -475,6 +475,11 @@ footer {
         border-radius: 12px;
         box-sizing: border-box;
         border-radius: 12px;
+        height: 50%;
+    }
+
+    .darkBGsearch:first-child {
+        margin-top: 250px;
     }
 
     .details {
@@ -495,6 +500,11 @@ footer {
     .container {
         display: flex;
         flex-direction: column;
+        max-width: 100%;
+    }
+
+    .main-content {
+        padding-bottom: 100%;
     }
 
     .username {
@@ -504,7 +514,7 @@ footer {
     div.form-container {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
         width: 100%;
