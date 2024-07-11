@@ -96,9 +96,17 @@
                     <p><?php echo $location; ?></p>
                     <p><?php echo $date; ?></p>
                     <h3><?php echo $username; ?></h3>
-                    <form method="post" class="formStyle">
+                    <?php 
+                    if( !getRole()== 'Docent' )
+                    {
+                        ?>
+                        <form method="post" class="formStyle">
                         <input class="secondbutton" type="submit" name="request" value="opdracht aanvragen">
                     </form>
+                        <?php
+                    }
+                    ?>
+
                     <div class="meerRuimte">
                     <a class="meerDetails" id="terugBtn" href="search.php">Terug</a>
                     </div>
