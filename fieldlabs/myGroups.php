@@ -153,6 +153,9 @@
                             $query = "DELETE FROM student_posts WHERE student_id = :student_id";
                             $stmt = dbConnect()->prepare($query);
                             $stmt->execute(['student_id' => $request['student_id']]);
+                            $query = "DELETE FROM posts WHERE post_id = :post_id";
+                            $stmt = dbConnect()->prepare($query);
+                            $stmt->execute(['post_id' => $request['post_id']]);
                             header("Refresh:0");
                         }
                         if (isset($_POST["decline_complete" . $request['id']])) {
