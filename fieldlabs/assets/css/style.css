@@ -604,4 +604,8 @@ footer {
         flex-direction: row;
         padding: 10px;
     }
+
+    .meerDetails {
+        margin-bottom: 5px;
+    }
 }
