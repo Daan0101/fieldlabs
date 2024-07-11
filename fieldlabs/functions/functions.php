@@ -205,6 +205,11 @@ function showButtons($conn)
             Zoek opdracht
             <i class="fa-solid fa-arrow-left icon"></i>
             </a>
+            <a href="../fieldlabs/myGroups.php" class="styleButton" id="btnMyGroups">
+            <i class="fa-solid fa-arrow-right icon"></i>
+            Mijn groep / mijn opdrachten
+            <i class="fa-solid fa-arrow-left icon"></i>
+            </a>
         </div>';
     }
 }
