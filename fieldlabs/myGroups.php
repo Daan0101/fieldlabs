@@ -284,15 +284,14 @@ if (isset($_POST['done'])) {
                     // -----------------------------------
 
                 ?>
-                    <div class="form-container">
-                        <div class="darkBGsearch">
+                    <!-- <div > -->
+                        <div >
                             <h1><?php echo $title; ?></h1>
                             <article class="details2"><?php echo $details; ?></article>
                             <p><?php echo $location; ?></p>
                             <p><?php echo $date; ?></p>
                             <h3>Student: <?php echo $username; ?></h3>
-                        </div>
-                    </div>
+                    <!-- </div> -->
                     </div>
                      <?php
                     }
