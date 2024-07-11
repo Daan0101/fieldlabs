@@ -11,11 +11,15 @@
             $post_id = $_GET['post_id'];
             $student_id = $_SESSION['uid'];
             $query =
-                "SELECT post_id, student_id FROM requests WHERE post_id = :post_id AND student_id = :student_id";
+                "SELECT post_id, student_id FROM requests WHERE student_id = :student_id";
             $stmt = dbConnect()->prepare($query);
-            $stmt->execute([':post_id' => $post_id, ':student_id' => $student_id]);
+            $stmt->execute([':student_id' => $student_id]);
+            $otherquery =
+                "SELECT * FROM student_posts WHERE student_id = :student_id";
+            $otherstmt = dbConnect()->prepare($otherquery);
+            $otherstmt->execute([':student_id' => $student_id]);
             // $stmt->fetch();
-            if (!$stmt->fetch()) {
+            if (!$stmt->fetch() && !$otherstmt->fetch()) {
                 $query = "SELECT * FROM posts WHERE post_id = :post_id";
                 $stmt = dbConnect()->prepare($query);
                 $stmt->execute([':post_id' => $post_id]);
@@ -33,7 +37,7 @@
                     ':product_owner_id' => $product_owner_id
                 ]);
             } else {
-                echo "<div class='submitError'>ERROR: Je hebt deze opdracht al aangevraagd.</div>";
+                echo "<div class='submitError'>ERROR: Je hebt een opdracht al aangevraagd, of je bent al bezig met een opdracht.</div>";
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
