@@ -214,5 +214,13 @@ function showButtons($conn)
     }
 }
 
+function getRole(): string
+{
+    $query = "SELECT role FROM users WHERE uid = :uid";
+    $stmt = dbConnect()->prepare($query);
+    $stmt->execute([':uid' => $_SESSION['uid']]);
+    return $stmt->fetch()['role'];
+}
+
 
 ?>

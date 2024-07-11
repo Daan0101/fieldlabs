@@ -306,13 +306,7 @@ if (isset($_POST['done'])) {
     </div>
 
     <?php
-    function getRole(): string
-    {
-        $query = "SELECT role FROM users WHERE uid = :uid";
-        $stmt = dbConnect()->prepare($query);
-        $stmt->execute([':uid' => $_SESSION['uid']]);
-        return $stmt->fetch()['role'];
-    }
+
     function deleteRecord($requestId)
     {
         $query = "DELETE FROM requests WHERE id = :requestId";
