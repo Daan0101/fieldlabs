@@ -37,6 +37,7 @@
                         <div class="row">
                             <button class="styleButton" id="btnLogin" type="submit" name="register" class="btn btn-primary">Register</button>
                         </div>
+                        <p>Heb je al een account? <a class="footerLink" href="login.php">Login</a></p>
                     </form>
             </div>
             <?php

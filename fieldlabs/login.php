@@ -40,6 +40,7 @@
                             </div>
                             <div class="col-lg-4"></div>
                         </div>
+                        <p>Heb je nog geen account? <a class="footerLink" href="register.php">Register</a></p>
                     </form>
 
                 <?php
