@@ -42,7 +42,7 @@
                 $stmt->execute([
                     ':student_id' => $student_id,
                     ':post_id' => $post_id,
-                    ':product_owner_id' => $post_id
+                    ':product_owner_id' => $product_owner_id
                 ]);
             } else {
                 echo "";
@@ -119,7 +119,9 @@
                     $stmt = dbConnect()->prepare($query);
                     $stmt->execute([':product_owner_id' => $_SESSION['uid']]);
                     $requests = $stmt->fetchAll();
+                    echo count($requests);
                     foreach ($requests as $request) {
+                        echo "wsp";
                         // Post title
                         $query = "SELECT title FROM posts WHERE post_id = :post_id";
                         $stmt = dbConnect()->prepare($query);
@@ -218,9 +220,10 @@
                 $stmt->execute();
                 $result = $stmt->fetchAll();
                 foreach ($result as $record) {
-
+                    $stmt = dbConnect()->prepare("SELECT * from users WHERE uid = :uid");
+                    $stmt->execute([':uid' => $record['student_id']]); 
+                    $username = $stmt->fetch()['username'];
                     $post_id = $record['post_id'];
-                    
                     $stmt =  dbConnect()->prepare(
                         "SELECT * FROM posts WHERE post_id = :post_id"
                     );
@@ -239,7 +242,7 @@
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     $stmt->execute(['uid' => $record['product_owner_id']]);
                     $record = $stmt->fetch();
-                    $username = $record['username'];
+                    // $username = $record['username'];
                     // -----------------------------------
 
                 ?>
@@ -249,7 +252,7 @@
                             <article><?php echo $details; ?></article>
                             <p><?php echo $location; ?></p>
                             <p><?php echo $date; ?></p>
-                            <h3><?php echo $username; ?></h3>
+                            <h3>Student: <?php echo $username; ?></h3>
                         </div>
                     </div>
                      <?php
