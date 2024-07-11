@@ -25,6 +25,12 @@
         <div class="main-content">
 
             <?php
+            if (!isset($_SESSION['uid'])) {
+                header("Location: ./login.php");
+                exit();
+            }
+            ?>
+            <?php
             showButtons($conn);
             ?>
 
