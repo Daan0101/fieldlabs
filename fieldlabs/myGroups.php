@@ -155,7 +155,6 @@ if (isset($_POST['done'])) {
                     $stmt = dbConnect()->prepare($query);
                     $stmt->execute([':product_owner_id' => $_SESSION['uid']]);
                     $requests = $stmt->fetchAll();
-                    echo count($requests);
                     foreach ($requests as $request) {
                         // Post title
                         $query = "SELECT title FROM posts WHERE post_id = :post_id";
@@ -268,7 +267,7 @@ if (isset($_POST['done'])) {
                     );
                     $stmt->execute([':post_id' => $post_id]);
                     $record = $stmt->fetch();
-                    if(!$record['product_owner_id' ] == $_SESSION['uid']){ echo"<h1>HADYVUADVB</h1>"; continue; }
+                    if(!$record['product_owner_id' ] == $_SESSION['uid']){ continue; }
 
                     $title = $record["title"];
                     $details =  $record["details"];
