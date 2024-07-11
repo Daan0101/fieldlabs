@@ -44,6 +44,7 @@
                     ':post_id' => $post_id,
                     ':product_owner_id' => $product_owner_id
                 ]);
+                unset($_POST['done']);
             } else {
                 echo "";
             }
