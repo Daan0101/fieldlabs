@@ -558,6 +558,10 @@ footer {
         margin-right: 5%;
     }
 
+    .darkBGpost {
+        padding-bottom: 10px;
+    }
+
     header h1 {
         font-size: 20px;
         margin: 5px;
