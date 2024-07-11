@@ -97,7 +97,7 @@
                     <p><?php echo $date; ?></p>
                     <h3><?php echo $username; ?></h3>
                     <?php 
-                    if( !getRole()== 'Docent' )
+                    if(  getRole() !== 'Docent' )
                     {
                         ?>
                         <form method="post" class="formStyle">
