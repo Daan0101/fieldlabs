@@ -11,48 +11,83 @@
 
 <body>
 
-    <?php
-    include("./includes/header.php");
-    if (isset($_POST['done'])) {
-        echo "<div class='submitError'>SYSTEEM: Opdracht afronding verzonden</div>";
-        // $query = "DELETE FROM student_posts WHERE student_id = :student_id";
+<?php
+include("./includes/header.php");
+
+// Start the session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_POST['done'])) {
+    echo "";
+
+    try {
+        // Verify that the session variable is set
+        if (!isset($_SESSION['uid'])) {
+            throw new Exception("Error: User is not logged in.");
+        }
+
+        // Debug: Check session value
+        echo "";
+
+        // Fetch the student post
         $query = "SELECT * FROM student_posts WHERE student_id = :student_id";
         $stmt = dbConnect()->prepare($query);
         $stmt->execute([':student_id' => $_SESSION['uid']]);
-        $post_id = $stmt->fetch()['post_id'];
-        try {
-            // $post_id = $_GET['post_id'];
+        
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Debug: Check query result
+        if ($row) {
+            echo "";
+            $post_id = $row['post_id'];
             $student_id = $_SESSION['uid'];
+
+            // Check if the request is already complete
             $query = "SELECT * FROM request_complete WHERE post_id = :post_id AND student_id = :student_id";
             $stmt = dbConnect()->prepare($query);
             $stmt->execute([':post_id' => $post_id, ':student_id' => $student_id]);
-            // $stmt->fetch();
-            if (!$stmt->fetch()) {
+
+            if ($stmt->fetch()) {
+                echo "";
+            } else {
+                // Fetch the product owner ID
                 $query = "SELECT * FROM posts WHERE post_id = :post_id";
                 $stmt = dbConnect()->prepare($query);
                 $stmt->execute([':post_id' => $post_id]);
-                $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                $record = $stmt->fetch();
-                $product_owner_id = $record["product_owner_id"];
-                $query =
-                    "INSERT INTO 
-                request_complete (student_id, post_id, product_owner_id) 
-                VALUES (:student_id, :post_id, :product_owner_id) ";
-                $stmt = dbConnect()->prepare($query);
-                $stmt->execute([
-                    ':student_id' => $student_id,
-                    ':post_id' => $post_id,
-                    ':product_owner_id' => $product_owner_id
-                ]);
-                unset($_POST['done']);
-            } else {
-                echo "";
+                $record = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                // Debug: Check posts query result
+                if ($record) {
+                    echo "";
+                    $product_owner_id = $record["product_owner_id"];
+
+                    // Insert the request completion record
+                    $query = "INSERT INTO request_complete (student_id, post_id, product_owner_id) VALUES (:student_id, :post_id, :product_owner_id)";
+                    $stmt = dbConnect()->prepare($query);
+                    $stmt->execute([
+                        ':student_id' => $student_id,
+                        ':post_id' => $post_id,
+                        ':product_owner_id' => $product_owner_id
+                    ]);
+
+                    echo "<div class='submitSuccess'>Request successfully completed.</div>";
+                }
             }
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
+        } 
+    } catch (PDOException $e) {
+        echo "";
+    } catch (Exception $e) {
+        echo "";
     }
-    ?>
+}
+?>
+
+
+
+
+
 
     <?php
     include("./includes/navbar.php");
