@@ -475,6 +475,11 @@ footer {
         border-radius: 12px;
         box-sizing: border-box;
         border-radius: 12px;
+        height: 50%;
+    }
+
+    .darkBGsearch:first-child {
+        margin-top: 250px;
     }
 
     .details {
@@ -492,10 +497,24 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .main-content {
+        padding-bottom: 100%;
+    }
+
+    .username {
+        margin-top: 10px;
+    }
+
     div.form-container {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -594,5 +613,9 @@ footer {
     .sidenav ul a {
         flex-direction: row;
         padding: 10px;
+    }
+
+    .meerDetails {
+        margin-bottom: 5px;
     }
 }

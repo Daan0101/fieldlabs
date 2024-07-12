@@ -64,7 +64,7 @@
                                 ?>
                             <b>Jouw opdracht</b>
                             
-                            <a href="<?php echo $urll?>">Edit</a>
+                            <a class="meerDetails" href="<?php echo $urll?>">Edit</a>
                                 <?php
                                 echo '';
                             }
