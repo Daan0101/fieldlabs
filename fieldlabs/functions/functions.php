@@ -141,11 +141,6 @@ function register($conn)
             $stmt->bindParam(':email', $email);
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                echo "<script type=\"text/javascript\">toastr.error('User already exists')</script>";
-                exit;
-            }
-
             $stmt = $conn->prepare("INSERT INTO users (username, email, role, token) VALUES (:username, :email, :role, :token)");
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);

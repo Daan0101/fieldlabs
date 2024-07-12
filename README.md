@@ -21,6 +21,15 @@ Voor het opzetten van fieldlabs app moet je een database opzetten. Hieronder vin
 
 De website zou nu volledig bruikbaar zijn.
 
+## INLOGGEN OP HET ADMIN ACCOUNT
+-> Open de applicatie op localhost
+-> Open daarna de phpmyadmin pagina door naar http://localhost/phpmyadmin/index.php of klik [HIER] (http://localhost/phpmyadmin/index.php)</br>
+-> Maak op de applicatie / website een nieuw account aan</br>
+-> Navigeer naar fieldlabs -> users</br>
+-> Refresh de phpmyadmin pagina</br>
+-> Verander dan de role in de rij van het net aangemaakte account naar 'admin'</br>
+-> Log daarna in op het net aangemaakte account</br></br>
+
 # COMMIT TEMPLATE
 
 - wat (waar) uitleg
