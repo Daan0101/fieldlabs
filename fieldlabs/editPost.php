@@ -6,11 +6,11 @@
     include("./includes/head.php");
 
     // Check if the user's role is 'Docent'
-    if ($_SESSION['role'] !== 'Docent') {
+    //if ($_SESSION['role'] !== 'Docent') {
         // If not, redirect them to an access denied page or the homepage
-        header("Location: ./");
-        exit(); // Prevent further execution of the script
-    }
+        //header("Location: ./");
+      //  exit(); // Prevent further execution of the script
+   // }
 
     include_once("./functions/functions.php"); // Include functions file only once
 
@@ -30,7 +30,8 @@
                 ':location' => $location,
                 ':details' => $details,
                 ':date' => $date,
-                ':product_owner_id' => $_GET['id'],
+                ':product_owner_id' => $_SESSION['uid'],
+                ':post_id' => $_GET['id']
             ]);
             header('Location: search.php');
         }

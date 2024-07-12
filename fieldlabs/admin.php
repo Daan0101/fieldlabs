@@ -11,10 +11,10 @@
     <div class="container">
         <!-- Check of de user een admin is -->
         <?php
-        if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-            header("Location: ./login.php");
-            exit();
-        }
+        //if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+            //header("Location: ./login.php");
+            //exit();
+        //}
 
         ?>
         <!-- Main content -->
